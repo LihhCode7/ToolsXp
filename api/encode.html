@@ -1,0 +1,26 @@
+<div dir="ltr" style="text-align: left;" trbidi="on">
+   <div id="html-parse">
+      <style scoped="" type="text/css">
+         .darkMode #html-parse .button-group{float:none;background:#444852;}.darkMode #html-parse textarea{background-color:#202442;box-shadow:inset 0 3px #202442;color:white;}.darkMode #html-parse{background:#2d3158;}#outer-wrapper{margin:0 auto;text-align:left;float:none;background-position:center!important;}#post-wrapper{width:100%;max-width:100%;margin:0 auto;text-align:left;float:none;background-position:center!important;}.post-body,.post{background-position:center!important;}.post-body p{margin:0;}#blog1,#artikel,.blog-posts{background-position:center!important;}#comments,#sidebar-wrapper,#menu-wrap{display:none;margin-top:0;margin:0;}#main-wrapper{padding:0;width:100%;border:0;}#html-parse{background:#ecf0f1;position:relative;display:block;clear:both;border-radius:5px;padding:20px;}#html-parse textarea{width:100%;height:240px;margin:0 auto;display:block;background-color:#fff;padding:20px;font-family:Monospace;font-size:13px;border:0;border-radius:5px 5px 0 0;resize:none;box-shadow:inset 0 3px #cdd1d2;}textarea:focus{background-color:#fff;color:#303030;}#html-parse .box{margin:10px auto 30px;color:#fff;font-size:90%;}#html-parse .box p{margin:0 0 2px;}#html-parse button{cursor:pointer;}#html-parse .col{width:48%;margin:0 auto 30px;}#html-parse .left{float:left;margin-left:1%;}#html-parse .right{float:right;margin-right:1%;}#html-parse .button-group {float: none;background: #4d6a79;text-align: center;margin: 0 0 28px 10px;border-radius: 30px 30px;}#html-parse button,#html-parse button[disabled]:active{background:rgba(255,255,255,.3);text-align:center;color:#fff;display:inline-block;padding:8px 16px;font-size:13px;font-weight:400;line-height:1.471;border-radius:99em;margin:0 5px;border:0;box-shadow:0 2px 3px rgba(0,0,0,0.06),0 2px 3px rgba(0,0,0,0.1);transition:all .3s;}#html-parse button:hover,#html-parse button:active{background:rgba(255,255,255,.5);color:#fff;box-shadow:0 10px 21px rgba(0,0,0,0.15),0 6px 6px rgba(0,0,0,0.12);}#html-parse button[disabled],#html-parse button[disabled]:active{background:rgba(255,255,255,.5);color:#fff;box-shadow:0 10px 21px rgba(0,0,0,0.15),0 6px 6px rgba(0,0,0,0.12);}#html-parse .opt1,#html-parse .opt2,#html-parse .opt3,#html-parse .opt4,#html-parse .opt5{display:inline-block;margin:0 3px 0 10px;vertical-align:middle;border:none;outline:none;}#html-parse br{display:none;}.option-input{-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none;position:relative;right:0;bottom:0;left:0;height:16px;width:16px;transition:all 0.15s ease-out 0s;background:rgba(255,255,255,.3);border:0;color:#fff;cursor:pointer;display:inline-block;margin-right:0.5rem;outline:none;position:relative;border-radius:99em;}.option-input:hover{background:rgba(255,255,255,.3);}.option-input:checked{background:rgba(0,0,0,.2);animation:rubberBand 1s;}.option-input:checked::before{height:16px;width:16px;position:absolute;content:'\f00c';font-family:fontawesome;display:inline-block;font-size:12.66667px;text-align:center;line-height:16px;}.option-input:checked::after{-webkit-animation:click-wave 0.65s;-moz-animation:click-wave 0.65s;animation:click-wave 0.65s;background:#40e0d0;content:'';display:block;position:relative;z-index:100;}.option-input.radio{border-radius:50%;}.option-input.radio::after{border-radius:50%;}
+
+      </style>
+      <br />
+      <form method="post" name="pageform" onsubmit="return doencrypt(this);">
+         <span class="clear"></span><br />
+         <textarea cols="30" id="areatxt" name="code" placeholder="Paste your HTML, JS, CSS, PHP, C+ code here..." rows="20"></textarea>
+         <br />
+         <div class="button-group">
+            <div class="box"></div>
+            <button class="ripplelink" id="button-on" onclick="doencrypt(pageform);">Convert HTML</button>
+            <button class="ripplelink" id="button-on" type="reset">Clear Field</button> <br />
+            <button class="ripplelink" id="txtarea" onclick="copyToClipboard();">Copy All</button>
+         </div>
+         <textarea cols="30" id="txtarea" name="ecode" readonly="yes" rows="20"></textarea>
+         <div class="clear">
+         </div>
+      </form>
+      <script type="text/javascript">
+         function doencrypt(e){return""==e.code.value?(alert("Gaboleh kosong goblok!"),!1):(enctext=encrypt(e.code.value),codetocopy="<script type='text/javascript'>",codetocopy+="\n",codetocopy+="document.write(unescape('"+enctext+"'));\n",codetocopy+="",codetocopy+="<\/script>",e.ecode.value=codetocopy,!1)}function encrypt(e){var t,o="";for(t=0;t<e.length;t++)o+="%"+hexfromdec(e.charCodeAt(t));return o}function hexfromdec(e){return hex1=Math.round(e/16-.5),hex2=e-16*hex1,""+getletter(hex1)+getletter(hex2)}function getletter(e){return e<10?e:10==e?"A":11==e?"B":12==e?"C":13==e?"D":14==e?"E":15==e?"F":void 0}function code_check(){var e=document.getElementById("txtarea");e.value.indexOf("Paste your code here...")>0&&(e.value="")}function copyToClipboard(){$("#txtarea").select(),document.execCommand("copy")}
+      </script><br />
+   </div>
+</div>
